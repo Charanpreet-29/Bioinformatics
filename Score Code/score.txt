@@ -1,0 +1,34 @@
+$filename=shift;
+print("Filename is $filename\n");
+
+open(IN, $filename);
+@data=<In>;
+chomp(@data);
+for(my $i=0; $i<scalar(@data); $i++)
+{
+  print($data[$i]);
+}
+
+$seq1=$data[1];
+$seq2=$data[3];
+
+$m=5; $mm= -4; $g=-20;
+$score=0;
+
+for(my $i=0; $i<length($seq1);$i++)
+{
+{
+  if(substr($seq1,$i,1) eq substr($seq2,$i,1))
+  {
+   $score+=$m;
+  }
+  elsif($seq1[$i] eq '-' || $seq2[$i] eq '-' )
+  {
+    $score+=$g;
+  }
+  else
+  {
+ $score+=$mm;
+  }
+ }
+print( "the score is $score\n");

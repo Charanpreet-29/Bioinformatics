@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+print("Enter Yes or No\n");
+my $input = <STDIN>;
+$q=length($input);
+if(uc(substr($input,0,$q-1)) eq 'YES')
+{
+print"you entered \U $input OK \n\n";
+}
+elsif(uc(substr($input,0,$q-1)) eq 'NO')
+{
+print"you entered \U $input I CAN HEAR  YOU \n\n";
+}
+else
+{
+print"you entered \U $input MAKE UP YOUR MIND\n\n"
+}

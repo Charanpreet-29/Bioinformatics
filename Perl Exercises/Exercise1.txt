@@ -1,0 +1,74 @@
+$input=shift;
+print("filename is $input \n");
+open(IN,$input);
+@data=<IN>;
+chomp(@data);
+
+$seq1=$data[0];
+$seq2=$data[1];
+$seq3=$data[2];
+print"seq is $seq1,$seq2,$seq3\n";
+
+$counta=0;$countb=0;$countc=0;$countd=0;
+for(my $i=0;$i<length($seq1);$i++)
+{
+ if(substr($seq1,$i,1)eq 'A')
+   {
+    $counta+=1;
+   }
+ elsif(substr($seq1,$i,1)eq'B')
+   {
+    $countb+=1;
+   }
+ elsif(substr($seq1,$i,1)eq'C')
+   {
+    $countc+=1;
+   }
+ else
+   {
+    $countd+=1;
+   }
+}
+
+for(my $i=0;$i<length($seq2);$i++)
+{
+ if(substr($seq2,$i,1)eq 'A')
+   {
+    $counta+=1;
+   }
+ elsif(substr($seq2,$i,1)eq'B')
+   {
+    $countb+=1;
+   }
+ elsif(substr($seq2,$i,1)eq'C')
+   {
+    $countc+=1;
+   }
+
+ else
+   {
+    $countd+=1;
+   }
+}
+
+
+for(my $i=0;$i<length($seq3);$i++)
+{
+ if(substr($seq3,$i,1)eq 'A')
+   {
+    $counta+=1;
+   }
+ elsif(substr($seq3,$i,1)eq'B')
+   {
+    $countb+=1;
+   }
+ elsif(substr($seq3,$i,1)eq'C')
+   {
+$countc+=1;
+   }
+ else
+   {
+    $countd+=1;
+   }
+}
+ print" A $counta\n B $countb\n C $countc\n D $countd\n";
